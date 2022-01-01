@@ -96,13 +96,6 @@ return require('packer').startup({function(use)
   use 'lewis6991/impatient.nvim'
 
   -- colour
-  -- considering switching colourschemes
---  use {"rebelot/kanagawa.nvim",
---      config = function()
---          require('plugin-settings.kanagawacolor-config')
---      end
---  }
-  -- use {'ajmwagar/vim-deus'}
   use {'theniceboy/nvim-deus',
       config = function()
           require('plugin-settings.deuscolor-config')
@@ -115,6 +108,41 @@ return require('packer').startup({function(use)
   -- the default filetype plugin for nvim is slow, use this one for nvim 0.6 or greater
   use {"nathom/filetype.nvim"}
 
+  -- continue to show function signature hint and highlight current argument
+  use {"ray-x/lsp_signature.nvim",
+      config = function()
+          require "lsp_signature".setup()
+      end,
+  }
+
+  -- commenting commands
+  -- Normal Mode
+    -- `gcc` - Toggles the current line using linewise comment
+    -- `gbc` - Toggles the current line using blockwise comment
+    -- `[count]gcc` - Toggles the number of line given as a prefix-count using linewise
+    -- `[count]gbc` - Toggles the number of line given as a prefix-count using blockwise
+    -- `gc[count]{motion}` - (Op-pending) Toggles the region using linewise comment
+    -- `gb[count]{motion}` - (Op-pending) Toggles the region using linewise comment
+    -- `gco` - Insert comment to the next line and enters INSERT mode
+    -- `gcO` - Insert comment to the previous line and enters INSERT mode
+    -- `gcA` - Insert comment to end of the current line and enters INSERT mode
+  -- Visual Mode
+    --`gc` - Toggles the region using linewise comment
+    --`gb` - Toggles the region using blockwise comment
+  use {'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
+
+  -- diagnostics tool, quickly navigate errors/warnings
+  use {"folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+        require('plugin-settings.trouble-config')
+      end
+  }
+
   end,
 
   -- Move to lua dir so impatient.nvim can cache it
@@ -125,6 +153,15 @@ return require('packer').startup({function(use)
 }
 )
 
+
+-- OLD TESTING
+
+-- considering switching colourschemes
+--  use {"rebelot/kanagawa.nvim",
+--      config = function()
+--          require('plugin-settings.kanagawacolor-config')
+--      end
+--  }
 
   --use 'EdenEast/nightfox.nvim'
 --use 'sainnhe/gruvbox-material'
