@@ -61,11 +61,15 @@ return require('packer').startup({function(use)
   }
 
 -- this plugin is indev and I would eventually like it once it is stable
---  use 'brymer-meneses/grammar-guard.nvim'
---  require("grammar-guard").init()
+--  use {'brymer-meneses/grammar-guard.nvim',
+--      config = function()
+--          require('plugin-settings.grammar-guard-config')
+--      end
+--  }
 
   -- snippets
   use {'hrsh7th/vim-vsnip',
+      requires = "rafamadriz/friendly-snippets",
       config = function()
           require('plugin-settings.vsnip-config')
       end
@@ -143,6 +147,7 @@ return require('packer').startup({function(use)
       end
   }
 
+
   end,
 
   -- Move to lua dir so impatient.nvim can cache it
@@ -155,6 +160,16 @@ return require('packer').startup({function(use)
 
 
 -- OLD TESTING
+--  use({
+--    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+--    config = function()
+--      require("lsp_lines").register_lsp_virtual_lines()
+--    end,
+--  })
+--  -- Disable virtual_text since it's redundant due to lsp_lines.
+--  vim.diagnostic.config({
+--    virtual_text = false,
+--  })
 
 -- considering switching colourschemes
 --  use {"rebelot/kanagawa.nvim",

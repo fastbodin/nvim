@@ -21,6 +21,11 @@ api.nvim_set_keymap('n', 'j', 'gj', {noremap = true, silent = true})
 api.nvim_set_keymap('n', '0', 'g0', {noremap = true, silent = true})
 api.nvim_set_keymap('n', '$', 'g$', {noremap = true, silent = true})
 
+-- open lsp diagnostic at cursor with Control-I for Info
+api.nvim_set_keymap('n', '<C-i>', '<cmd>lua vim.diagnostic.open_float()<CR>', {noremap = true, silent = true})
+-- Disable virtual_text 
+vim.diagnostic.config({virtual_text = false})
+
 -- Move selected line / block of text in visual mode
 --vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv\'', {noremap = true, silent = true})
 --vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv\'', {noremap = true, silent = true})
@@ -28,6 +33,3 @@ api.nvim_set_keymap('n', '$', 'g$', {noremap = true, silent = true})
 -- Tab switch buffer
 --vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
 --vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
---
--- explorer
---vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
