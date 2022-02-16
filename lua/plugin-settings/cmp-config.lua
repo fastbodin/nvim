@@ -46,6 +46,7 @@ cmp.setup {
     { name = 'vsnip'},
     { name = 'nvim_lsp'},
     { name = 'latex_symbols'},
+    { name = 'calc'},
   }),
   formatting = {
     format = require("lspkind").cmp_format({with_text = true, menu = ({

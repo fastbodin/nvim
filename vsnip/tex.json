@@ -65,10 +65,15 @@
     "description": "LaTeX Absolute Value."
   },
   "Exponent": {
-    "prefix": ["e"],
+    "prefix": ["ex"],
     "body": ["^{${1}} $0"],
     "description": "LaTeX Exponent."
   },
+   "Square root": {
+    "prefix": ["sq"],
+    "body": ["\\sqrt{${1}} $0"],
+    "description": "LaTeX Exponent."
+  }, 
   "Congruent": {
     "prefix": ["cmod"],
     "body": ["\\equiv ${1} \\pmod{${2}} $0"],

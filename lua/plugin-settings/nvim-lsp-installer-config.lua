@@ -11,7 +11,7 @@ lsp_installer.on_server_ready(function(server)
                 -- set the language
                 language = "en-CA",
                 -- add works to the dictionary here
-                dictionary = { ['en-CA'] = {} },
+                dictionary = { ['en-CA'] = {hypergraph} },
             }
         }
     end
