@@ -22,9 +22,12 @@ api.nvim_set_keymap('n', '0', 'g0', {noremap = true, silent = true})
 api.nvim_set_keymap('n', '$', 'g$', {noremap = true, silent = true})
 
 -- open lsp diagnostic at cursor with Control-I for Info
-api.nvim_set_keymap('n', '<C-i>', '<cmd>lua vim.diagnostic.open_float()<CR>', {noremap = true, silent = true})
--- Disable virtual_text 
-vim.diagnostic.config({virtual_text = false})
+--api.nvim_set_keymap('n', '<C-i>', '<cmd>lua vim.diagnostic.open_float()<CR>', {noremap = true, silent = true})
+-- Disable virtual_text
+vim.diagnostic.config({virtual_text = true})
+
+-- I like jk as ESC
+api.nvim_set_keymap('i', 'jk', '<Esc>', {noremap = true, silent = true})
 
 -- Move selected line / block of text in visual mode
 --vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv\'', {noremap = true, silent = true})

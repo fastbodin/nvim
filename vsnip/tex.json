@@ -8,6 +8,48 @@
     ],
     "description": "LaTex Environment."
   },
+  "Section": {
+    "prefix": ["s"],
+    "body": ["\\section{${1}}\\label{$1}", 
+                "$0"
+    ],
+    "description": "LaTex Section."
+  },
+  "No # Section": {
+    "prefix": ["sn"],
+    "body": ["\\section*{${1}}\\label{$1}", 
+                "$0"
+    ],
+    "description": "LaTex No # Section."
+  },
+  "SubSection": {
+    "prefix": ["ss"],
+    "body": ["\\subsection{${1}}\\label{$1}", 
+                "$0"
+    ],
+    "description": "LaTex SubSection."
+  },
+  "No # SubSection": {
+    "prefix": ["ssn"],
+    "body": ["\\subsection*{${1}}\\label{$1}", 
+                "$0"
+    ],
+    "description": "LaTex No # SubSection."
+  },
+  "SubSubSection": {
+    "prefix": ["sss"],
+    "body": ["\\subsubsection{${1}}\\label{$1}", 
+                "$0"
+    ],
+    "description": "LaTex SubSubSection."
+  },
+  "No # SubSubSection": {
+    "prefix": ["sssn"],
+    "body": ["\\subsubsection*{${1}}\\label{$1}", 
+                "$0"
+    ],
+    "description": "LaTex No # SubSubSection."
+  },
   "Equation": {
     "prefix": ["eq"],
     "body": ["\\begin{${1|equation,equation*|}}", 

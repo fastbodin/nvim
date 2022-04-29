@@ -28,6 +28,7 @@ return require('packer').startup({function(use)
       "hrsh7th/cmp-vsnip",
       "hrsh7th/cmp-calc",
       "kdheepak/cmp-latex-symbols",
+      "f3fora/cmp-spell"
     },
     config = function()
         require('plugin-settings.cmp-config')
@@ -44,6 +45,9 @@ return require('packer').startup({function(use)
         require('plugin-settings/nvim-lsp-installer-config')
     end
   }
+
+  -- nice paranthesis highlighting
+  -- use "p00f/nvim-ts-rainbow"
 
   -- treesitter
   -- TSInstall <whatever language I want to install>
@@ -101,14 +105,8 @@ return require('packer').startup({function(use)
   use 'lewis6991/impatient.nvim'
 
   -- colour
-  use {'theniceboy/nvim-deus',
-      config = function()
-          require('plugin-settings.deuscolor-config')
-      end
-  }
-
-  -- benchmarking
-  use 'tweekmonster/startuptime.vim'
+  use 'eddyekofo94/gruvbox-flat.nvim'
+  vim.cmd[[colorscheme gruvbox-flat]]
 
   -- the default filetype plugin for nvim is slow, use this one for nvim 0.6 or greater
   use {"nathom/filetype.nvim"}
@@ -148,7 +146,11 @@ return require('packer').startup({function(use)
       end
   }
 
-
+  -- matching funciton
+  use {'andymass/vim-matchup'}
+  vim.g.loaded_matchit = 1
+  vim.g.matchup_matchparen_deferred = 1
+  vim.g.matchup_matchparen_hi_surround_always = 1
   end,
 
   -- Move to lua dir so impatient.nvim can cache it
@@ -183,6 +185,15 @@ return require('packer').startup({function(use)
 --use 'sainnhe/gruvbox-material'
   --use 'EdenEast/nightfox.nvim'
   --require('github-theme').setup()
+-- use {'ishan9299/nvim-solarized-lua'}
+  -- vim.cmd[[colorscheme solarized]]
+
+--  use {'theniceboy/nvim-deus',
+--      config = function()
+--          require('plugin-settings.deuscolor-config')
+--      end
+--  }
+--
 
 -- A bunch of things I have played with but am not currently using
 ---- telescope

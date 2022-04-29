@@ -47,6 +47,7 @@ cmp.setup {
     { name = 'nvim_lsp'},
     { name = 'latex_symbols'},
     { name = 'calc'},
+    {name = 'spell'}
   }),
   formatting = {
     format = require("lspkind").cmp_format({with_text = true, menu = ({
@@ -62,3 +63,4 @@ cmp.setup {
 --  --    ghost_text = false
 --  }
 }
+

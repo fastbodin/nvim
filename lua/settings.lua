@@ -21,7 +21,7 @@ vim.g.scrolloff = 5
 vim.o.scl = 'no'
 
 -- spell checking ## treesitter now manages this
---vim.o.spell = true
---vim.o.spelllang = 'en_ca'
+vim.o.spell = false
+vim.o.spelllang = 'en_ca'
 
 
