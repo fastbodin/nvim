@@ -1,6 +1,7 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"lua", "python", "latex", "bibtex"},
-
+  ensure_installed = {"lua", "python", "latex", "bibtex", "c", "cpp"},
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
   highlight = {
     enable = true,
     -- list of language that will be disabled
@@ -11,11 +12,10 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
---  matchup = {
---    enable = true,              -- mandatory, false will disable the whole extension
---    disable = {},  -- optional, list of language that will be disabled
---    -- [options]
---  },
+  matchup = {
+    enable = true, -- mandatory, false will disable the whole extension
+    disable = {},  -- optional, list of language that will be disabled
+  },
 }
 
 --treesitter also folds apparantly

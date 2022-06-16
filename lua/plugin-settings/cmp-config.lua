@@ -49,6 +49,7 @@ cmp.setup {
     { name = 'calc'},
     {name = 'spell'}
   }),
+
   formatting = {
     format = require("lspkind").cmp_format({with_text = true, menu = ({
         buffer = "[Buf]",
@@ -58,9 +59,5 @@ cmp.setup {
      })
    }),
   },
---  experimental = {
---      native_menu = true,
---  --    ghost_text = false
---  }
 }
 
