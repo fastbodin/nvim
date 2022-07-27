@@ -2,8 +2,8 @@ local g = vim.g
 local api = vim.api
 
 -- set comma to be local leader
-api.nvim_set_keymap('n', ',', '<NOP>', {noremap = true, silent = true})
-g.mapleader = ','
+-- api.nvim_set_keymap('n', ',', '<NOP>', {noremap = true, silent = true})
+-- g.mapleader = ','
 
 -- better window movement
 api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})

@@ -17,6 +17,8 @@ lspconfig.sumneko_lua.setup {capabilities = capabilities}
 
 lspconfig.clangd.setup {capabilities = capabilities}
 
+lspconfig.jdtls.setup {capabilities = capabilities}
+
 lspconfig.pylsp.setup {
     capabilities = capabilities,
     settings = {

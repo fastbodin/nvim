@@ -16,7 +16,6 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   --completion
---  use "ms-jpq/coq_nvim"
   --Install nvim-cmp and sources
   use {'hrsh7th/nvim-cmp',
     requires = {
@@ -72,16 +71,8 @@ return require('packer').startup(function(use)
       end
   }
   -- motion
-  use 'ggandor/lightspeed.nvim'
-  -- file explorer
-  use {
-      'kyazdani42/nvim-tree.lua',
-      requires = 'kyazdani42/nvim-web-devicons',
-      config = function()
-          require'nvim-tree'.setup {}
-          require('plugin-settings.nvimtree-config')
-      end
-  }
+  use 'ggandor/leap.nvim'
+  require('leap').set_default_keymaps()
   -- make startup faster
   use 'lewis6991/impatient.nvim'
   -- colour
@@ -144,3 +135,11 @@ end)
 --      end
 --  }
 --
+--
+--  -- file explorer
+--  use {'kyazdani42/nvim-tree.lua',
+--      requires = 'kyazdani42/nvim-web-devicons',
+--      config = function()
+--          require('plugin-settings.nvimtree-config')
+--      end
+--  }

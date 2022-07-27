@@ -28,7 +28,12 @@ vim.g.vimtex_fold_enabled = 1
 -- zR unfold everything in buffer
 
 
--- quickfix window options
+vim.cmd[[let g:vimtex_quickfix_ignore_filters = [
+      \ 'Underfull',
+      \ 'Overfull',
+      \]
+      ]]
+
 --vim.cmd[[let g:vimtex_quickfix_ignore_filters = {'overfull' : 0, 'underfull' : 0}]]
 
 --vim.cmd[[
